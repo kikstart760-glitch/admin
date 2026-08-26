@@ -1,0 +1,44 @@
+.login-page {
+    background-image: url('../assets/ChatGPT\ Image\ Aug\ 7\,\ 2026\,\ 09_30_51\ PM.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-box {
+    margin-bottom: auto;
+    padding: 15px 35px;
+}
+
+.security-box{
+    margin-top: auto;
+    margin-left: 0;
+    padding: 15px 35px;
+}
+
+.security-box {
+  background: #ffffffa6;
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+}
+
+.security-box svg {
+  font-size: 34px;
+  color: #0d6efd;
+}
+
+.security-box h6 {
+  margin: 0;
+  font-weight: 700;
+}
+
+.security-box small {
+  color: #777;
+}

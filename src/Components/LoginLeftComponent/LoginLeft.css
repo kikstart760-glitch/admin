@@ -1,0 +1,29 @@
+.left-side {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 80px;
+  margin-left: -160px;
+}
+
+
+.hero h1 {
+  color: #111827;
+  font-size: 62px;
+  font-weight: 800;
+  line-height: 1.1;
+  padding-bottom: 15px;
+}
+
+.hero span {
+  color: #0d6efd;
+}
+
+.hero p {
+  margin-top: 25px;
+  color: #5b6470;
+  font-size: 20px;
+  line-height: 30px;
+}
+
