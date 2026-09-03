@@ -1,0 +1,284 @@
+.dashcard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+
+/* CARD */
+
+.carddash {
+    padding: 22px;
+    background: #ffffff;
+    border: 1px solid #eef0f4;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.carddash:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.1);
+}
+
+
+/* TOP */
+
+.card-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+/* ICON */
+
+.card-icon {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    color: white;
+    font-size: 27px;
+}
+
+
+/* TREND ICON */
+
+.trend-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    font-size: 16px;
+}
+
+
+/* DETAILS */
+
+.card-details {
+    margin-top: 22px;
+    padding-left: 20px;
+}
+
+.card-details h3 {
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: 500;
+    color: #687083;
+}
+
+.card-details h2 {
+    margin: 5px 0 10px;
+
+    font-size: 32px;
+    font-weight: 700;
+    color: #172033;
+}
+
+
+/* GROWTH */
+.card-growth{
+    padding-bottom: 10px;
+}
+
+.growth {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.growth span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.growth p {
+    margin: 0;
+
+    color: #8a91a1;
+    font-size: 12px;
+}
+
+
+
+/* BOTTOM */
+
+.card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid #eef0f4;
+    padding-top: 13px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.card-bottom div:not(.divider) {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-bottom strong {
+    font-size: 14px;
+    color: #20283a;
+}
+
+.card-bottom small {
+    margin-top: 3px;
+
+    font-size: 11px;
+    color: #8a91a1;
+}
+
+.divider {
+    width: 1px;
+    height: 30px;
+    background: #e8eaf0;
+}
+.carddash.blue {
+    background: #f0f5ff;
+}
+
+.carddash.green {
+    background: #f0fdf4;
+}
+
+.carddash.purple {
+    background: #f6f0ff;
+}
+
+.carddash.orange {
+    background: #fff4ed;
+}
+
+
+
+/* ========================= */
+/* BLUE - BOOKINGS */
+/* ========================= */
+
+.carddash.blue .card-icon {
+    background: #2563eb;
+}
+
+.carddash.blue .trend-icon {
+    color: #2563eb;
+    background: #eaf1ff;
+}
+
+.carddash.blue .growth span {
+    color: #2563eb;
+    background: #eaf1ff;
+}
+
+.carddash.blue .mini-chart span {
+    background: #2563eb;
+}
+
+
+/* ========================= */
+/* GREEN - REVENUE */
+/* ========================= */
+
+.carddash.green .card-icon {
+    background: #16b878;
+}
+
+.carddash.green .trend-icon {
+    color: #16b878;
+    background: #e7faf2;
+}
+
+.carddash.green .growth span {
+    color: #16b878;
+    background: #e7faf2;
+}
+
+.carddash.green .mini-chart span {
+    background: #16b878;
+}
+
+
+/* ========================= */
+/* PURPLE - USERS */
+/* ========================= */
+
+.carddash.purple .card-icon {
+    background: #7c3aed;
+}
+
+.carddash.purple .trend-icon {
+    color: #7c3aed;
+    background: #f1eaff;
+}
+
+.carddash.purple .growth span {
+    color: #7c3aed;
+    background: #f1eaff;
+}
+
+.carddash.purple .mini-chart span {
+    background: #7c3aed;
+}
+
+
+/* ========================= */
+/* ORANGE - OFFERS */
+/* ========================= */
+
+.carddash.orange .card-icon {
+    background: #ff8500;
+}
+
+.carddash.orange .trend-icon {
+    color: #ff8500;
+    background: #fff1e2;
+}
+
+.carddash.orange .growth span {
+    color: #ff8500;
+    background: #fff1e2;
+}
+
+.carddash.orange .mini-chart span {
+    background: #ff8500;
+}
+
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 1100px) {
+    .dashcard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .dashcard {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+}

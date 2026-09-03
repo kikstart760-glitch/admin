@@ -1,10 +1,3 @@
-.left-side {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-right: auto;
-}
-
 
 .hero h1 {
   color: #111827;
@@ -25,3 +18,36 @@
   line-height: 30px;
 }
 
+.security-box {
+  background: #ffffffa6;
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+}
+
+.security-box svg {
+  font-size: 34px;
+  color: #0d6efd;
+}
+
+.security-box h6 {
+  margin: 0;
+  font-weight: 700;
+}
+
+.security-box small {
+  color: #777;
+}
+
+
+.logo-container{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  padding: 60px;
+  height: 100vh;
+}

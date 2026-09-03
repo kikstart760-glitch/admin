@@ -9,12 +9,13 @@ import {
   FaSignOutAlt,
   FaCrown
 } from "react-icons/fa";
+import logopic from "../../assets/logo2.png";
 
 function SidebarComponent({ collapsed }) {
   return (
     <div className={`sidebar ${collapsed ? "collapsed" : ""}`}>
       <div>
-        <h2 className="logo">✈ TravelGo</h2>
+        <h2 className="logo"><img src={logopic} alt="Logo" /></h2>
 
         <p className="section-title">MAIN</p>
         <div className="menu-item active">
