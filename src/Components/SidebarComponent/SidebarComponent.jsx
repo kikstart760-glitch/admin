@@ -40,10 +40,10 @@ function SidebarComponent({ collapsed }) {
         <div className="menu-item">
           <FaKey /> <span>Permissions</span>
         </div>
-      </div>
-
-      <div className="menu-item logout">
-        <FaSignOutAlt /> <span>Logout</span>
+        <p className="section-title">SETTINGS</p>
+        <div className="menu-item logout">
+          <FaSignOutAlt /> <span>Logout</span>
+        </div>
       </div>
     </div>
   )
