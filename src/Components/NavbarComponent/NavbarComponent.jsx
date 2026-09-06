@@ -1,19 +1,35 @@
-import React from 'react'
-import "../NavbarComponent/NavbarComponent.css"
-import { FaBell, FaSearch, FaBars, FaEnvelope } from "react-icons/fa";
+import React from "react";
+import "../NavbarComponent/NavbarComponent.css";
 
-function NavbarComponent({ toggleSidebar }) {
+import {
+  FaBell,
+  FaSearch,
+  FaBars,
+  FaEnvelope
+} from "react-icons/fa";
+
+function NavbarComponent({ toggleSidebar, collapsed }) {
+
   return (
-    <div className="navbar">
+    <div className={`navbar ${collapsed ? "collapsed-navbar" : ""}`}>
 
       {/* LEFT SECTION */}
       <div className="nav-left">
-        <FaBars className="menu-icon" onClick={toggleSidebar} />
+
+        <FaBars
+          className="menu-icon"
+          onClick={toggleSidebar}
+        />
 
         <div className="search-box">
           <FaSearch className="search-icon" />
-          <input type="text" placeholder="Search anything..." />
+
+          <input
+            type="text"
+            placeholder="Search anything..."
+          />
         </div>
+
       </div>
 
       {/* RIGHT SECTION */}
@@ -29,16 +45,23 @@ function NavbarComponent({ toggleSidebar }) {
         </div>
 
         <div className="profile">
-          <img src="https://i.pravatar.cc/40" alt="profile" />
+
+          <img
+            src="https://i.pravatar.cc/40"
+            alt="profile"
+          />
+
           <div className="profile-info">
             <p className="name">John Admin</p>
             <span className="role">Super Admin</span>
           </div>
+
         </div>
 
       </div>
+
     </div>
-  )
+  );
 }
 
-export default NavbarComponent
+export default NavbarComponent;
