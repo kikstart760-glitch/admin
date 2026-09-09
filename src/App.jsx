@@ -4,6 +4,7 @@ import Dashboard from "./Pages/Dashboard";
 import Layout from "./Layout/Layout";
 import AdminLogin from "./Pages/AdminLogin";
 import Cms from "./Pages/Cms";
+import UserControl from "./Pages/UserControl";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout><Dashboard /></Layout>} />
           <Route path="/cms" element={<Layout><Cms /></Layout>} />
+          <Route path="/users" element={<Layout><UserControl /></Layout>} />
           <Route path="/login" element={<AdminLogin/>} />
         </Routes>
       </Router>
