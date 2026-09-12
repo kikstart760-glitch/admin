@@ -1,0 +1,839 @@
+/* ========================================
+   USER DETAILS MODAL
+======================================== */
+
+.user-details-modal .modal-dialog {
+  max-width: 1100px;
+  width: 95%;
+}
+
+.user-details-modal .modal-content {
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 20px 60px rgba(20, 50, 100, 0.18);
+}
+
+.user-modal {
+  display: flex;
+  min-height: 650px;
+  font-family: Inter, Arial, sans-serif;
+  color: #15284b;
+  background: #ffffff;
+}
+
+
+/* ========================================
+   LEFT SIDEBAR
+======================================== */
+
+.user-sidebar-content {
+  width: 290px;
+  min-width: 290px;
+  padding: 28px 20px;
+  background: linear-gradient(
+    180deg,
+    #f3f8ff 0%,
+    #eef6ff 100%
+  );
+  border-right: 1px solid #e2eaf5;
+}
+
+
+/* ========================================
+   PROFILE
+======================================== */
+
+.profile-section {
+  text-align: center;
+  position: relative;
+}
+
+.profile-image {
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 12px;
+  padding: 3px;
+  border-radius: 50%;
+  background: #dcecff;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.active-badge {
+  position: absolute;
+  top: 72px;
+  right: 25px;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 11px;
+  border-radius: 20px;
+
+  background: #d9f8eb;
+  color: #09a86b;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.active-badge span {
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+
+  margin-right: 5px;
+
+  background: #0db879;
+  border-radius: 50%;
+}
+
+.profile-section h2 {
+  margin: 5px 0;
+
+  color: #15284b;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.profile-section p {
+  margin: 0 0 9px;
+
+  color: #31538b;
+  font-size: 13px;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #1167df;
+  font-size: 13px;
+}
+
+.phone span {
+  color: #284a7d;
+}
+
+
+/* ========================================
+   SIDEBAR MENU
+======================================== */
+
+.sidebar-menus {
+  margin-top: 25px;
+}
+
+.menu-items {
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+  padding: 0 13px;
+  margin-bottom: 6px;
+
+  border-radius: 8px;
+
+  color: #294a7d;
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.menu-items span {
+  font-size: 18px;
+}
+
+.menu-items:hover {
+  background: #e7f1ff;
+  color: #1269e8;
+}
+
+.menu-items.current {
+  color: #1269e8;
+  background: #dcecff;
+  border-left: 3px solid #1477f8;
+}
+
+
+/* ========================================
+   ROLE CARD
+======================================== */
+
+.role-card {
+  margin-top: 25px;
+  padding: 12px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  border-radius: 10px;
+
+  background: #e1edff;
+}
+
+.role-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: #c8e0ff;
+  color: #126bea;
+
+  font-size: 14px;
+}
+
+.role-card strong {
+  display: block;
+
+  color: #17345f;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.role-card small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #6680a8;
+  font-size: 10px;
+}
+
+
+/* ========================================
+   SIDEBAR INFORMATION
+======================================== */
+
+.sidebar-info {
+  margin-top: 20px;
+}
+
+.info-row {
+  display: flex;
+
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.info-icon {
+  color: #58729b;
+  font-size: 17px;
+}
+
+.info-icon.green {
+  color: #16ae7a;
+}
+
+.info-row small {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #7790b4;
+  font-size: 10px;
+}
+
+.info-row strong {
+  display: block;
+
+  color: #1d355b;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+/* ========================================
+   EDIT PROFILE BUTTON
+======================================== */
+
+.edit-user-btn {
+  width: 100%;
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 8px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #1677ee;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.edit-user-btn:hover {
+  background: #0865d8;
+  box-shadow: 0 4px 12px rgba(22, 119, 238, 0.2);
+}
+
+.edit-user-btn:active {
+  transform: scale(0.98);
+}
+
+
+/* ========================================
+   RIGHT CONTENT
+======================================== */
+
+.user-content {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 28px 32px 18px;
+
+  background: #ffffff;
+}
+
+
+/* ========================================
+   CONTENT HEADER
+======================================== */
+
+.content-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #e5ebf3;
+}
+
+.tabs {
+  display: flex;
+  gap: 34px;
+}
+
+.tab {
+  position: relative;
+
+  padding: 0 0 15px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #50678e;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.tab:hover {
+  color: #086cf0;
+}
+
+.tab.current {
+  color: #086cf0;
+  font-weight: 600;
+}
+
+.tab.current::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+
+  height: 3px;
+
+  border-radius: 3px 3px 0 0;
+
+  background: #1477f8;
+}
+
+
+/* ========================================
+   CLOSE ICON
+======================================== */
+
+.close-btn {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #31517d;
+
+  font-size: 27px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #e33d3d;
+  background: #fff3f3;
+  border-radius: 6px;
+}
+
+
+/* ========================================
+   DETAILS SECTIONS
+======================================== */
+
+.details-section {
+  padding: 25px 0;
+
+  border-bottom: 1px solid #e7edf5;
+}
+
+.details-section h3,
+.notes-section h3 {
+  display: flex;
+  align-items: center;
+
+  margin: 0 0 18px;
+
+  color: #172d52;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.detail-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.detail-with-icon svg {
+  color: #6b83a6;
+  flex-shrink: 0;
+}
+
+.section-icon {
+  margin-right: 12px;
+
+  color: #163b73;
+
+  font-size: 18px;
+}
+
+
+/* ========================================
+   DETAILS GRID
+======================================== */
+
+.details-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 55px;
+  row-gap: 17px;
+}
+
+.detail {
+  min-width: 0;
+}
+
+.detail label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #7087a8;
+
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.detail p {
+  margin: 0;
+
+  color: #172f59;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  word-break: break-word;
+}
+
+
+/* ========================================
+   STATUS
+======================================== */
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 13px;
+
+  border-radius: 8px;
+
+  background: #d6f5e8;
+  color: #0aa46b;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.role-pill {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 13px;
+
+  border-radius: 8px;
+
+  background: #dceaff;
+  color: #0968e8;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.last-active {
+  color: #14a971 !important;
+}
+
+
+/* ========================================
+   NOTES
+======================================== */
+
+.notes-section {
+  padding: 20px 0;
+}
+
+.notes-box {
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 15px;
+
+  border: 1px solid #e0e8f3;
+  border-radius: 10px;
+
+  background: #f8fbff;
+}
+
+.notes-box strong {
+  color: #637a9b;
+  font-size: 17px;
+}
+
+.notes-box p {
+  margin: 3px 0 0;
+
+  color: #8a9bb4;
+
+  font-size: 11px;
+}
+
+.note-edit {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 6px;
+
+  background: transparent;
+
+  color: #7790b5;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.note-edit:hover {
+  background: #eaf3ff;
+  color: #1269e8;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.modal-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  padding-top: 8px;
+}
+
+
+/* IMPORTANT:
+   Custom button class
+   NOT Bootstrap .btn
+======================================== */
+
+.user-action-btn {
+  height: 35px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  padding: 0 15px;
+
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.user-action-btn:focus {
+  outline: none;
+}
+
+.user-action-btn:active {
+  transform: scale(0.97);
+}
+
+.user-action-btn svg {
+  flex-shrink: 0;
+}
+
+/* ========================================
+   CANCEL BUTTON
+======================================== */
+
+.close-action {
+  border: 1px solid #d7e0ed;
+
+  color: #314c75;
+}
+
+.close-action:hover {
+  background: #f5f8fc;
+  border-color: #bdcadb;
+}
+
+
+/* ========================================
+   UPDATE ROLE BUTTON
+======================================== */
+
+.change-role {
+  border: 1px solid #8bbcff;
+
+  color: #086cf0;
+}
+
+.change-role:hover {
+  background: #edf5ff;
+  border-color: #5d9fff;
+}
+
+
+/* ========================================
+   SUSPEND USER BUTTON
+======================================== */
+
+.block-user {
+  border: 1px solid #ff9a9a;
+
+  color: #f04444;
+}
+
+.block-user:hover {
+  background: #fff3f3;
+  border-color: #ff7070;
+}
+
+
+/* ========================================
+   REMOVE USER BUTTON
+======================================== */
+
+.delete-user {
+  border: 1px solid #ff3e3e;
+
+  background: #ff3e3e;
+
+  color: #ffffff;
+}
+
+.delete-user:hover {
+  border-color: #e82c2c;
+
+  background: #e82c2c;
+
+  box-shadow: 0 4px 10px rgba(255, 62, 62, 0.2);
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+
+  .user-details-modal .modal-dialog {
+    max-width: 95%;
+  }
+
+  .user-sidebar {
+    width: 250px;
+    min-width: 250px;
+  }
+
+  .user-content {
+    padding: 24px;
+  }
+
+  .details-grid {
+    column-gap: 25px;
+  }
+
+  .tabs {
+    gap: 20px;
+  }
+}
+
+
+/* ========================================
+   TABLET / MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+  .user-modal {
+    flex-direction: column;
+  }
+
+  .user-sidebar {
+    width: 100%;
+    min-width: 100%;
+
+    border-right: none;
+    border-bottom: 1px solid #e2eaf5;
+  }
+
+  .user-content {
+    width: 100%;
+    padding: 22px 20px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+  }
+
+  .modal-footer-actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+  .user-details-modal .modal-dialog {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .user-details-modal .modal-content {
+    border-radius: 12px;
+  }
+
+  .user-sidebar {
+    padding: 22px 16px;
+  }
+
+  .user-content {
+    padding: 20px 16px;
+  }
+
+  .tabs {
+    gap: 16px;
+    overflow-x: auto;
+  }
+
+  .tab {
+    white-space: nowrap;
+    font-size: 12px;
+  }
+
+  .modal-footer-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .user-action-btn {
+    width: 100%;
+  }
+
+  .close-action {
+    grid-column: span 2;
+  }
+}

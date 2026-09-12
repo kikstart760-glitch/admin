@@ -4,8 +4,7 @@
 
 .user-control {
   width: 100%;
-  min-height: 100vh;
-  padding: 26px 18px;
+  padding-bottom: 20px;
   background: #ffffff;
   font-family:
     Inter,
@@ -25,9 +24,9 @@
 .page-header {
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 26px;
+  padding: 20px;
 }
 
 .page-title-section h1 {

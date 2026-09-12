@@ -6,8 +6,6 @@ import {
   UserCheck,
   UserX,
   UserRoundX,
-  Upload,
-  Download,
   Plus,
   ArrowUp,
   ArrowDown,
@@ -70,16 +68,6 @@ function UserCard() {
         </div>
 
         <div className="header-actions">
-
-          <button className="action-btn">
-            <Upload size={17} strokeWidth={1.8} />
-            <span>Import Users</span>
-          </button>
-
-          <button className="action-btn">
-            <Download size={17} strokeWidth={1.8} />
-            <span>Export Users</span>
-          </button>
 
           <button className="add-user-btn">
             <Plus size={19} strokeWidth={2} />
