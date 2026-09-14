@@ -5,6 +5,9 @@ import Layout from "./Layout/Layout";
 import AdminLogin from "./Pages/AdminLogin";
 import Cms from "./Pages/Cms";
 import UserControl from "./Pages/UserControl";
+import Role from "./Pages/Role";
+import Permission from "./Pages/Permission";
+import Subscription from "./Pages/Subscription";
 
 
 function App() {
@@ -13,6 +16,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Layout><Dashboard /></Layout>} />
+          <Route path="/subscription" element={<Layout><Subscription /></Layout>} />
+          <Route path="/permissions" element={<Layout><Permission /></Layout>} />
+          <Route path="/roles" element={<Layout><Role /></Layout>} />
           <Route path="/cms" element={<Layout><Cms /></Layout>} />
           <Route path="/users" element={<Layout><UserControl /></Layout>} />
           <Route path="/login" element={<AdminLogin/>} />
