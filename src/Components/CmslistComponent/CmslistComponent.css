@@ -1,0 +1,640 @@
+/* =========================================
+   CMS CONTAINER
+========================================= */
+
+.cms-container {
+  width: 100%;
+  padding: 10px 0;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  color: #172554;
+}
+
+
+/* =========================================
+   TABLE WRAPPER
+========================================= */
+
+.cms-table-wrapper {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e5edf7;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 18px rgba(37, 99, 235, 0.05);
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.cms-table {
+  width: 100%;
+
+  min-width: 1100px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+
+/* =========================================
+   TABLE HEADER
+========================================= */
+
+.cms-table thead {
+  background: #f7faff;
+}
+
+.cms-table th {
+  height: 55px;
+
+  padding: 0 18px;
+
+  text-align: left;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  color: #172554;
+
+  white-space: nowrap;
+
+  border-bottom: 1px solid #e4ecf6;
+}
+
+
+/* =========================================
+   TABLE BODY
+========================================= */
+
+.cms-table td {
+  height: 76px;
+
+  padding: 8px 18px;
+
+  font-size: 13px;
+
+  white-space: nowrap;
+
+  border-bottom: 1px solid #edf2f7;
+}
+
+.cms-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.cms-table tbody tr:hover {
+  background: #fafcff;
+}
+
+.cms-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================================
+   COLUMN WIDTHS
+========================================= */
+
+.checkbox-column {
+  width: 55px;
+}
+
+.number-column {
+  width: 50px;
+}
+
+.title-column {
+  min-width: 350px;
+}
+
+.type-column {
+  width: 100px;
+}
+
+.slug-column {
+  width: 160px;
+}
+
+.status-column {
+  width: 150px;
+}
+
+.updated-column {
+  width: 180px;
+}
+
+.actions-column {
+  width: 170px;
+}
+
+
+/* =========================================
+   CHECKBOX
+========================================= */
+
+.cms-table input[type="checkbox"] {
+  appearance: none;
+
+  width: 18px;
+  height: 18px;
+
+  margin: 0;
+
+  border: 1.5px solid #c9d8ea;
+
+  border-radius: 5px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  position: relative;
+
+  vertical-align: middle;
+
+  transition: all 0.2s ease;
+}
+
+.cms-table input[type="checkbox"]:hover {
+  border-color: #7ca8df;
+}
+
+.cms-table input[type="checkbox"]:checked {
+  background: #2563eb;
+
+  border-color: #2563eb;
+}
+
+.cms-table input[type="checkbox"]:checked::after {
+  content: "✓";
+
+  position: absolute;
+
+  left: 3px;
+  top: 0px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.number-cell {
+  color: #31558a;
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.title-wrapper {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  min-width: 300px;
+}
+
+.cms-image {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 7px;
+
+  object-fit: cover;
+
+  flex-shrink: 0;
+
+  background: #eef4fb;
+}
+
+.title-content {
+  min-width: 0;
+}
+
+.cms-title {
+  margin-bottom: 5px;
+
+  color: #14213d;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+.cms-description {
+  color: #6b82a5;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================
+   TYPE BADGE
+========================================= */
+
+.type-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 55px;
+
+  height: 28px;
+
+  padding: 0 14px;
+
+  border-radius: 9px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* PAGE */
+
+.type-badge.page {
+  color: #2183d4;
+
+  background: #e3f3ff;
+}
+
+
+/* BLOG */
+
+.type-badge.blog {
+  color: #e83c78;
+
+  background: #ffe0e8;
+}
+
+
+/* =========================================
+   SLUG
+========================================= */
+
+.slug {
+  color: #31558a;
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status-wrapper {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+/* SWITCH */
+
+.status-switch {
+  width: 36px;
+  height: 21px;
+
+  padding: 2px;
+
+  border: none;
+
+  border-radius: 20px;
+
+  background: #d7e1ef;
+
+  cursor: pointer;
+
+  position: relative;
+
+  transition: background 0.2s ease;
+}
+
+
+/* SWITCH CIRCLE */
+
+.status-switch span {
+  display: block;
+
+  width: 17px;
+  height: 17px;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.15);
+
+  transition: transform 0.2s ease;
+}
+
+
+/* ACTIVE */
+
+.status-switch.active {
+  background: #10b981;
+}
+
+.status-switch.active span {
+  transform: translateX(15px);
+}
+
+
+/* PUBLISHED */
+
+.published {
+  color: #0b9b65;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* DRAFT */
+
+.draft {
+  color: #7b8ca8;
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   LAST UPDATED
+========================================= */
+
+.updated-date {
+  margin-bottom: 5px;
+
+  color: #31558a;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.updated-author {
+  color: #7185a4;
+
+  font-size: 12px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+/* ACTION BUTTON */
+
+.action-btn {
+  width: 44px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  color: #17345e;
+
+  border: 1px solid #dfe9f5;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* HOVER */
+
+.action-btn:hover {
+  background: #f1f6ff;
+
+  border-color: #bdd3f4;
+
+  color: #2563eb;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.cms-footer {
+  min-height: 70px;
+
+  padding: 0 26px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-top: 1px solid #edf2f7;
+}
+
+
+/* ENTRY TEXT */
+
+.entries {
+  color: #647b9d;
+
+  font-size: 13px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================
+   PAGINATION
+========================================= */
+
+.pagination {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+/* PAGINATION BUTTON */
+
+.page-btn,
+.page-number {
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #edf2f8;
+
+  border-radius: 9px;
+
+  background: #f8fbff;
+
+  color: #91a3bd;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+
+/* PREVIOUS / NEXT */
+
+.page-btn {
+  padding: 0 15px;
+
+  gap: 7px;
+}
+
+
+/* NUMBER */
+
+.page-number {
+  width: 38px;
+
+  padding: 0;
+}
+
+
+/* ACTIVE PAGE */
+
+.page-number.active {
+  background: #1769e8;
+
+  border-color: #1769e8;
+
+  color: #ffffff;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 4px 10px rgba(23, 105, 232, 0.2);
+}
+
+
+/* PAGINATION HOVER */
+
+.page-btn:hover {
+  background: #eef5ff;
+
+  border-color: #d6e5f8;
+
+  color: #2563eb;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1200px) {
+
+  .cms-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .cms-table {
+    min-width: 1100px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .cms-container {
+    padding: 5px 0;
+  }
+
+  .cms-table-wrapper {
+    border-radius: 10px;
+
+    overflow-x: auto;
+  }
+
+  .cms-footer {
+    min-width: 1100px;
+
+    padding: 0 20px;
+  }
+}
