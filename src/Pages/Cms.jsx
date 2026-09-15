@@ -1,8 +1,9 @@
 import React from 'react'
+import CMSCard from '../Components/CMSCardComponents/CMSCard'
 function Cms() {
   return (
     <div>
-      <h1>CMS Page</h1> 
+      <CMSCard /> 
     </div>
   )
 }
