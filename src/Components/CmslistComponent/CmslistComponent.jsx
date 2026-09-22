@@ -7,7 +7,9 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-import "./CmslistComponent.css";
+import "../CmslistComponent/CmslistComponent.css";
+
+import EditPageModal from "../ModalComponents/EditPageModal/EditPageModal";
 
 function CmslistComponent() {
   // =========================
@@ -171,10 +173,6 @@ function CmslistComponent() {
   // ACTIONS
   // =========================
 
-  const handleEdit = (page) => {
-    console.log("Edit Page:", page);
-  };
-
   const handleView = (page) => {
     console.log("View Page:", page);
   };
@@ -187,8 +185,46 @@ function CmslistComponent() {
   // COMPONENT
   // =========================
 
+  const [editModalOpen, setEditModalOpen] = useState(false);
+  const [selectedPage, setSelectedPage] = useState(null);
+
+  const handleEdit = (page) => {
+    setSelectedPage(page);
+    setEditModalOpen(true);
+  };
+
+  const closeEditModal = () => {
+    setEditModalOpen(false);
+    setSelectedPage(null);
+  };
+
+  const handleSectionEdit = (page, section) => {
+    console.log("EDIT SECTION");
+    console.log("Page:", page.title);
+    console.log("Section:", section.name);
+
+    // Later:
+    // navigate(`/admin/cms/${page.id}/${section.id}/edit`);
+  };
+
+  const handleSectionList = (page, section) => {
+    console.log("LIST SECTION");
+    console.log("Page:", page.title);
+    console.log("Section:", section.name);
+
+    // Later:
+    // navigate(`/admin/cms/${page.id}/${section.id}`);
+  };
+
   return (
     <div className="cms-container">
+      <EditPageModal 
+        isOpen={editModalOpen}
+        page={selectedPage}
+        onClose={closeEditModal}
+        onEdit={handleSectionEdit}
+        onList={handleSectionList}
+      />
 
       <div className="cms-table-wrapper">
 

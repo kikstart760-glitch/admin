@@ -1,0 +1,767 @@
+.edit-page-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(3px);
+}
+
+.edit-page-modal {
+  width: 100%;
+  max-width: 760px;
+  max-height: 90vh;
+
+  background: #ffffff;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 25px 60px rgba(15, 23, 42, 0.2);
+
+  overflow: hidden;
+}
+
+.edit-page-header {
+  padding: 22px 25px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #e9eff7;
+}
+
+.edit-page-header h2 {
+  margin: 0 0 5px;
+
+  color: #14213d;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.edit-page-header p {
+  margin: 0;
+
+  color: #7185a4;
+
+  font-size: 13px;
+}
+
+.edit-page-close {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e3eaf4;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #64748b;
+
+  cursor: pointer;
+}
+
+.edit-page-close:hover {
+  background: #f4f7fb;
+  color: #ef4444;
+}
+
+/* PAGE INFO */
+
+.selected-page-info {
+  margin: 20px 25px;
+  padding: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  background: #f8fbff;
+
+  border: 1px solid #e5edf7;
+  border-radius: 11px;
+}
+
+.selected-page-info img {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 8px;
+
+  object-fit: cover;
+}
+
+.selected-page-info h4 {
+  margin: 0 0 4px;
+
+  color: #172554;
+
+  font-size: 14px;
+}
+
+.selected-page-info span {
+  color: #7185a4;
+
+  font-size: 12px;
+}
+
+.page-status {
+  margin-left: auto;
+
+  padding: 6px 11px;
+
+  border-radius: 20px;
+
+  background: #f1f5f9;
+
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.page-status.active {
+  color: #059669;
+  background: #dcfce7;
+}
+
+/* ACCORDION */
+
+.section-accordion-list {
+  max-height: 520px;
+
+  padding: 0 25px 25px;
+
+  overflow-y: auto;
+}
+
+.section-accordion {
+  margin-bottom: 10px;
+
+  border: 1px solid #e4ebf5;
+  border-radius: 11px;
+
+  overflow: hidden;
+
+  transition: all 0.2s ease;
+}
+
+.section-accordion.expanded {
+  border-color: #bdd5f8;
+
+  box-shadow:
+    0 3px 12px rgba(37, 99, 235, 0.06);
+}
+
+.section-accordion-header {
+  width: 100%;
+
+  padding: 15px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: none;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  text-align: left;
+}
+
+.section-accordion-header:hover {
+  background: #fafcff;
+}
+
+.section-left {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+.section-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: #edf5ff;
+
+  color: #2563eb;
+}
+
+.section-info h4 {
+  margin: 0 0 4px;
+
+  color: #172554;
+
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.section-info p {
+  margin: 0;
+
+  color: #7b8ca8;
+
+  font-size: 12px;
+}
+
+.accordion-arrow {
+  color: #7890b0;
+}
+
+/* ACCORDION CONTENT */
+
+.section-accordion-content {
+  padding: 15px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  background: #f8fbff;
+
+  border-top: 1px solid #e7eef7;
+}
+
+.section-action-info h5 {
+  margin: 0 0 4px;
+
+  color: #334e75;
+
+  font-size: 12px;
+}
+
+.section-action-info p {
+  margin: 0;
+
+  color: #8394ad;
+
+  font-size: 11px;
+}
+
+.section-actions {
+  display: flex;
+
+  gap: 9px;
+}
+
+.section-btn {
+  height: 37px;
+
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.section-btn.edit {
+  border: none;
+
+  background: #2563eb;
+
+  color: #ffffff;
+}
+
+.section-btn.edit:hover {
+  background: #1d4ed8;
+}
+
+.section-btn.list {
+  border: 1px solid #d7e2f0;
+
+  background: #ffffff;
+
+  color: #31558a;
+}
+
+.section-btn.list:hover {
+  border-color: #a8c5ec;
+
+  background: #f1f6ff;
+
+  color: #2563eb;
+}
+
+/* FOOTER */
+
+.edit-page-footer {
+  min-height: 68px;
+
+  padding: 0 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid #e9eff7;
+
+  background: #ffffff;
+}
+
+.edit-page-footer span {
+  color: #8394ad;
+
+  font-size: 12px;
+}
+
+.modal-close-btn {
+  height: 38px;
+
+  padding: 0 18px;
+
+  border: 1px solid #dce6f2;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #334e75;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.modal-close-btn:hover {
+  background: #f6f9fd;
+}
+
+@media (max-width: 768px) {
+  .edit-page-overlay {
+    padding: 15px;
+  }
+
+  .edit-page-modal {
+    max-height: 95vh;
+  }
+
+  .section-accordion-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .section-actions {
+    width: 100%;
+  }
+
+  .section-btn {
+    flex: 1;
+  }
+}
+
+/* =========================================
+   ACCORDION BODY
+========================================= */
+
+.accordion-body {
+  padding: 20px;
+
+  background: #f9fbfe;
+
+  border-top: 1px solid #e7eef7;
+}
+
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.content-section-title,
+.available-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+}
+
+.content-section-title h5,
+.available-header h5 {
+  margin: 0 0 3px;
+
+  color: #172554;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.content-section-title p,
+.available-header p {
+  margin: 0;
+
+  color: #8495ad;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   ACTIVE BADGE
+========================================= */
+
+.current-badge {
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  background: #dcfce7;
+
+  color: #059669;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   CURRENT CONTENT
+========================================= */
+
+.current-content-card {
+  padding: 12px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  background: #ffffff;
+
+  border: 1px solid #b9d4fa;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 3px 10px rgba(37, 99, 235, 0.05);
+
+  margin-bottom: 24px;
+}
+
+.current-content-card img,
+.available-item img {
+  width: 55px;
+  height: 55px;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  object-fit: cover;
+
+  background: #edf3fa;
+}
+
+
+/* =========================================
+   DETAILS
+========================================= */
+
+.content-details {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.content-details h4 {
+  margin: 0 0 5px;
+
+  color: #172554;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.content-details p {
+  margin: 0;
+
+  color: #7b8da7;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   EDIT BUTTON
+========================================= */
+
+.content-edit-btn {
+  height: 35px;
+
+  padding: 0 13px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.content-edit-btn:hover {
+  background: #1d4ed8;
+}
+
+
+/* =========================================
+   AVAILABLE HEADER
+========================================= */
+
+.available-header {
+  margin-top: 5px;
+}
+
+
+/* =========================================
+   ADD BUTTON
+========================================= */
+
+.add-content-btn {
+  height: 34px;
+
+  padding: 0 12px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  border: 1px solid #cbdcf3;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.add-content-btn:hover {
+  background: #eff6ff;
+
+  border-color: #93baf0;
+}
+
+
+/* =========================================
+   AVAILABLE LIST
+========================================= */
+
+.available-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.available-item {
+  padding: 10px 12px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2eaf4;
+
+  border-radius: 9px;
+
+  transition: all 0.2s ease;
+}
+
+.available-item:hover {
+  border-color: #c2d6f1;
+
+  box-shadow:
+    0 2px 8px rgba(37, 99, 235, 0.05);
+}
+
+
+/* =========================================
+   AVAILABLE ACTIONS
+========================================= */
+
+.available-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+/* SET BUTTON */
+
+.set-item-btn {
+  height: 33px;
+
+  padding: 0 11px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  border: 1px solid #bbf7d0;
+
+  border-radius: 7px;
+
+  background: #f0fdf4;
+
+  color: #059669;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.set-item-btn:hover {
+  background: #dcfce7;
+
+  border-color: #86efac;
+}
+
+
+/* =========================================
+   DELETE
+========================================= */
+
+.delete-item-btn {
+  width: 34px;
+  height: 33px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #fecaca;
+
+  border-radius: 7px;
+
+  background: #fff;
+
+  color: #ef4444;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.delete-item-btn:hover {
+  background: #fef2f2;
+
+  border-color: #fca5a5;
+}
+
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.empty-list,
+.no-current-item {
+  padding: 18px;
+
+  text-align: center;
+
+  border: 1px dashed #d4dfed;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #8b9bb2;
+
+  font-size: 12px;
+}
+
+.no-current-item {
+  margin-bottom: 22px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .current-content-card,
+  .available-item {
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+  }
+
+  .available-actions {
+    width: 100%;
+
+    justify-content: flex-end;
+  }
+
+  .content-edit-btn {
+    margin-left: auto;
+  }
+}
