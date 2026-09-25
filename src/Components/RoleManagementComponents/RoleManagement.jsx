@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+
 import {
   Search,
   ChevronDown,
@@ -145,30 +146,73 @@ const rolesData = [
 ];
 
 const categories = [
-  { name: "All Roles", count: 12, icon: Folder, color: "blue" },
-  { name: "Administrator", count: 2, icon: Users, color: "blue" },
-  { name: "Manager", count: 3, icon: Users, color: "green" },
-  { name: "Editor", count: 2, icon: FileText, color: "orange" },
-  { name: "Agent", count: 2, icon: BriefcaseBusiness, color: "pink" },
-  { name: "Customer Support", count: 2, icon: Headphones, color: "cyan" },
-  { name: "Others", count: 1, icon: UserRound, color: "purple" },
+  {
+    name: "All Roles",
+    count: 12,
+    icon: Folder,
+    color: "blue",
+  },
+  {
+    name: "Administrator",
+    count: 2,
+    icon: Users,
+    color: "blue",
+  },
+  {
+    name: "Manager",
+    count: 3,
+    icon: Users,
+    color: "green",
+  },
+  {
+    name: "Editor",
+    count: 1,
+    icon: FileText,
+    color: "orange",
+  },
+  {
+    name: "Agent",
+    count: 1,
+    icon: BriefcaseBusiness,
+    color: "pink",
+  },
+  {
+    name: "Customer Support",
+    count: 2,
+    icon: Headphones,
+    color: "cyan",
+  },
+  {
+    name: "Others",
+    count: 3,
+    icon: UserRound,
+    color: "purple",
+  },
 ];
 
 function RoleManagement() {
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState("All Status");
   const [module, setModule] = useState("All Modules");
-  const [selectedCategory, setSelectedCategory] = useState("All Roles");
+  const [selectedCategory, setSelectedCategory] =
+    useState("All Roles");
+
   const [currentPage, setCurrentPage] = useState(1);
   const [openMenu, setOpenMenu] = useState(null);
 
   const rolesPerPage = 7;
 
+  /* ==========================
+     FILTER ROLES
+  ========================== */
+
   const filteredRoles = useMemo(() => {
     return rolesData.filter((role) => {
+      const searchText = search.trim().toLowerCase();
+
       const matchesSearch =
-        role.name.toLowerCase().includes(search.toLowerCase()) ||
-        role.description.toLowerCase().includes(search.toLowerCase());
+        role.name.toLowerCase().includes(searchText) ||
+        role.description.toLowerCase().includes(searchText);
 
       const matchesStatus =
         status === "All Status" || role.status === status;
@@ -177,24 +221,44 @@ function RoleManagement() {
         selectedCategory === "All Roles" ||
         role.category === selectedCategory;
 
-      return matchesSearch && matchesStatus && matchesCategory;
+      return (
+        matchesSearch &&
+        matchesStatus &&
+        matchesCategory
+      );
     });
   }, [search, status, selectedCategory]);
+
+  /* ==========================
+     PAGINATION
+  ========================== */
 
   const totalPages = Math.max(
     1,
     Math.ceil(filteredRoles.length / rolesPerPage)
   );
 
+  const startIndex =
+    (currentPage - 1) * rolesPerPage;
+
   const displayedRoles = filteredRoles.slice(
-    (currentPage - 1) * rolesPerPage,
-    currentPage * rolesPerPage
+    startIndex,
+    startIndex + rolesPerPage
   );
+
+  /* ==========================
+     CATEGORY
+  ========================== */
 
   const handleCategory = (category) => {
     setSelectedCategory(category);
     setCurrentPage(1);
+    setOpenMenu(null);
   };
+
+  /* ==========================
+     REFRESH
+  ========================== */
 
   const handleRefresh = () => {
     setSearch("");
@@ -208,66 +272,100 @@ function RoleManagement() {
   return (
     <div className="role-page">
 
-      {/* SIDEBAR */}
+      {/* =====================
+          SIDEBAR
+      ====================== */}
+
       <aside className="role-sidebar">
 
         <div className="category-card">
+
           <h3>Role Categories</h3>
 
           <div className="category-list">
+
             {categories.map((category) => {
               const Icon = category.icon;
 
               return (
                 <button
+                  type="button"
                   key={category.name}
                   className={`category-item ${
                     selectedCategory === category.name
                       ? "selected"
                       : ""
                   }`}
-                  onClick={() => handleCategory(category.name)}
+                  onClick={() =>
+                    handleCategory(category.name)
+                  }
                 >
                   <div className="category-left">
-                    <span className={`category-icon ${category.color}`}>
+
+                    <span
+                      className={`category-icon ${category.color}`}
+                    >
                       <Icon size={17} />
                     </span>
 
-                    <span>{category.name}</span>
+                    <span>
+                      {category.name}
+                    </span>
+
                   </div>
 
                   <span className="category-count">
                     {category.count}
                   </span>
+
                 </button>
               );
             })}
+
           </div>
+
         </div>
 
+        {/* TIP */}
+
         <div className="tip-card">
+
           <div className="tip-icon">
             <ShieldCheck size={20} />
           </div>
 
           <div>
+
             <h4>Tip</h4>
+
             <p>
-              Roles define what users can do in the system.
-              Assign permissions to control access.
+              Roles define what users can do in the
+              system. Assign permissions to control
+              access.
             </p>
+
           </div>
+
         </div>
 
       </aside>
 
-      {/* MAIN */}
+      {/* =====================
+          MAIN
+      ====================== */}
+
       <main className="role-content">
 
-        {/* FILTERS */}
+        {/* =====================
+            FILTER BAR
+        ====================== */}
+
         <div className="filter-bar">
 
+          {/* SEARCH */}
+
           <div className="search-box">
+
             <Search size={19} />
 
             <input
@@ -282,15 +380,23 @@ function RoleManagement() {
 
             {search && (
               <button
+                type="button"
                 className="clear-search"
-                onClick={() => setSearch("")}
+                onClick={() => {
+                  setSearch("");
+                  setCurrentPage(1);
+                }}
               >
                 <X size={15} />
               </button>
             )}
+
           </div>
 
+          {/* STATUS */}
+
           <div className="select-box">
+
             <select
               value={status}
               onChange={(e) => {
@@ -304,12 +410,18 @@ function RoleManagement() {
             </select>
 
             <ChevronDown size={16} />
+
           </div>
 
+          {/* MODULE */}
+
           <div className="select-box">
+
             <select
               value={module}
-              onChange={(e) => setModule(e.target.value)}
+              onChange={(e) =>
+                setModule(e.target.value)
+              }
             >
               <option>All Modules</option>
               <option>Users</option>
@@ -320,15 +432,25 @@ function RoleManagement() {
             </select>
 
             <ChevronDown size={16} />
+
           </div>
 
-          <button className="filter-button">
-            <SlidersHorizontal size={17} />
-            Filters
-          </button>
+          {/* FILTER */}
 
           <button
+            type="button"
+            className="filter-button"
+          >
+            <SlidersHorizontal size={17} />
+            <span>Filters</span>
+          </button>
+
+          {/* REFRESH */}
+
+          <button
+            type="button"
             className="refresh-button"
+            title="Reset filters"
             onClick={handleRefresh}
           >
             <RefreshCw size={18} />
@@ -336,7 +458,10 @@ function RoleManagement() {
 
         </div>
 
-        {/* TABLE */}
+        {/* =====================
+            TABLE
+        ====================== */}
+
         <div className="role-table-wrapper">
 
           <table className="role-table">
@@ -353,30 +478,55 @@ function RoleManagement() {
             </thead>
 
             <tbody>
+
               {displayedRoles.map((role) => (
+
                 <tr key={role.id}>
 
+                  {/* ROLE NAME */}
+
                   <td>
+
                     <div className="role-name">
-                      <span className={`role-avatar ${role.color}`}>
+
+                      <span
+                        className={`role-avatar ${role.color}`}
+                      >
                         <ShieldCheck size={18} />
                       </span>
 
-                      <strong>{role.name}</strong>
+                      <strong>
+                        {role.name}
+                      </strong>
+
                     </div>
+
                   </td>
 
+                  {/* DESCRIPTION */}
+
                   <td>
+
                     <span className="description">
                       {role.description}
                     </span>
+
                   </td>
 
-                  <td>
-                    <strong>{role.users}</strong>
+                  {/* USERS */}
+
+                  <td className="users-column">
+
+                    <strong>
+                      {role.users}
+                    </strong>
+
                   </td>
 
+                  {/* STATUS */}
+
                   <td>
+
                     <span
                       className={`status ${
                         role.status === "Active"
@@ -385,38 +535,61 @@ function RoleManagement() {
                       }`}
                     >
                       <span className="status-dot" />
+
                       {role.status}
+
                     </span>
+
                   </td>
 
+                  {/* PERMISSIONS */}
+
                   <td>
+
                     <strong className="permission">
+
                       {role.permissions === 48
                         ? "All (100%)"
-                        : `${role.permissions} / 48 (${Math.round(
-                            (role.permissions / 48) * 100
+                        : `${
+                            role.permissions
+                          } / 48 (${Math.round(
+                            (role.permissions / 48) *
+                              100
                           )}%)`}
+
                     </strong>
+
                   </td>
 
+                  {/* ACTIONS */}
+
                   <td>
+
                     <div className="actions">
 
                       <button
+                        type="button"
                         className="action-btn"
                         title="View"
                         onClick={() =>
-                          console.log("View:", role)
+                          console.log(
+                            "View:",
+                            role
+                          )
                         }
                       >
                         <Eye size={17} />
                       </button>
 
                       <button
+                        type="button"
                         className="action-btn"
                         title="Edit"
                         onClick={() =>
-                          console.log("Edit:", role)
+                          console.log(
+                            "Edit:",
+                            role
+                          )
                         }
                       >
                         <Pencil size={17} />
@@ -425,7 +598,9 @@ function RoleManagement() {
                       <div className="more-wrapper">
 
                         <button
+                          type="button"
                           className="action-btn"
+                          title="More"
                           onClick={() =>
                             setOpenMenu(
                               openMenu === role.id
@@ -438,98 +613,150 @@ function RoleManagement() {
                         </button>
 
                         {openMenu === role.id && (
+
                           <div className="more-menu">
-                            <button>Duplicate</button>
-                            <button>Permissions</button>
-                            <button className="danger">
+
+                            <button type="button">
+                              Duplicate
+                            </button>
+
+                            <button type="button">
+                              Permissions
+                            </button>
+
+                            <button
+                              type="button"
+                              className="danger"
+                            >
                               Delete
                             </button>
+
                           </div>
+
                         )}
 
                       </div>
 
                     </div>
+
                   </td>
 
                 </tr>
+
               ))}
 
+              {/* NO RESULT */}
+
               {displayedRoles.length === 0 && (
+
                 <tr>
-                  <td colSpan="6">
+
+                  <td colSpan={6}>
+
                     <div className="no-results">
                       No roles found
                     </div>
+
                   </td>
+
                 </tr>
+
               )}
+
             </tbody>
 
           </table>
 
-          {/* PAGINATION */}
-          <div className="pagination">
+        </div>
 
-            <span className="showing">
-              Showing{" "}
-              {filteredRoles.length === 0
-                ? 0
-                : (currentPage - 1) * rolesPerPage + 1}{" "}
-              to{" "}
-              {Math.min(
-                currentPage * rolesPerPage,
-                filteredRoles.length
-              )}{" "}
-              of {filteredRoles.length} roles
-            </span>
+        {/* =====================
+            PAGINATION
+        ====================== */}
 
-            <div className="pagination-buttons">
+        <div className="pagination">
+
+          <span className="showing">
+
+            Showing{" "}
+
+            {filteredRoles.length === 0
+              ? 0
+              : startIndex + 1}{" "}
+
+            to{" "}
+
+            {Math.min(
+              startIndex + rolesPerPage,
+              filteredRoles.length
+            )}{" "}
+
+            of {filteredRoles.length} roles
+
+          </span>
+
+          <div className="pagination-buttons">
+
+            <button
+              type="button"
+              className="page-nav"
+              disabled={currentPage === 1}
+              onClick={() =>
+                setCurrentPage((page) =>
+                  Math.max(1, page - 1)
+                )
+              }
+            >
+              <ChevronLeft size={16} />
+              Prev
+            </button>
+
+            {Array.from(
+              { length: totalPages },
+              (_, index) => index + 1
+            ).map((page) => (
 
               <button
-                className="page-nav"
-                disabled={currentPage === 1}
+                type="button"
+                key={page}
+                className={`page-number ${
+                  currentPage === page
+                    ? "active"
+                    : ""
+                }`}
                 onClick={() =>
-                  setCurrentPage((p) => p - 1)
+                  setCurrentPage(page)
                 }
               >
-                <ChevronLeft size={16} />
-                Prev
+                {page}
               </button>
 
-              {Array.from(
-                { length: totalPages },
-                (_, i) => i + 1
-              ).map((page) => (
-                <button
-                  key={page}
-                  className={`page-number ${
-                    currentPage === page ? "active" : ""
-                  }`}
-                  onClick={() => setCurrentPage(page)}
-                >
-                  {page}
-                </button>
-              ))}
+            ))}
 
-              <button
-                className="page-nav"
-                disabled={currentPage === totalPages}
-                onClick={() =>
-                  setCurrentPage((p) => p + 1)
-                }
-              >
-                Next
-                <ChevronRight size={16} />
-              </button>
-
-            </div>
+            <button
+              type="button"
+              className="page-nav"
+              disabled={
+                currentPage === totalPages
+              }
+              onClick={() =>
+                setCurrentPage((page) =>
+                  Math.min(
+                    totalPages,
+                    page + 1
+                  )
+                )
+              }
+            >
+              Next
+              <ChevronRight size={16} />
+            </button>
 
           </div>
 
         </div>
 
       </main>
+
     </div>
   );
 }

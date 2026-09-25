@@ -1,11 +1,34 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+/* ========================================
+   PAGE
+======================================== */
+
 .role-page {
   width: 100%;
-  min-height: 100vh;
+
   padding: 18px;
+
   display: flex;
+
+  /*
+   Prevent right content from
+   stretching vertically.
+  */
+  align-items: flex-start;
+
   gap: 20px;
+
   background: #f5f8fc;
+
   color: #17233c;
+
   font-family:
     Inter,
     -apple-system,
@@ -14,50 +37,88 @@
     sans-serif;
 }
 
-/* =========================
+/* ========================================
    SIDEBAR
-========================= */
+======================================== */
 
 .role-sidebar {
   width: 255px;
   min-width: 255px;
+
+  flex-shrink: 0;
 }
 
+/* ========================================
+   CATEGORY CARD
+======================================== */
+
 .category-card {
-  background: #ffffff;
-  border: 1px solid #e8edf5;
-  border-radius: 14px;
+  width: 100%;
+
   padding: 22px 16px;
-  box-shadow: 0 3px 14px rgba(24, 52, 88, 0.04);
+
+  background: #ffffff;
+
+  border: 1px solid #e8edf5;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 3px 14px
+    rgba(24, 52, 88, 0.04);
 }
 
 .category-card h3 {
   margin: 0 0 18px 5px;
-  font-size: 14px;
-  font-weight: 700;
+
   color: #1b2944;
+
+  font-size: 14px;
+
+  font-weight: 700;
 }
+
+/* ========================================
+   CATEGORY LIST
+======================================== */
 
 .category-list {
   display: flex;
+
   flex-direction: column;
+
   gap: 3px;
 }
 
 .category-item {
   width: 100%;
+
   height: 42px;
+
   padding: 0 9px;
+
   border: 0;
-  background: transparent;
+
   border-radius: 9px;
+
+  background: transparent;
+
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
-  cursor: pointer;
+
+  gap: 10px;
+
   color: #27344d;
+
   font-size: 13px;
+
   font-weight: 600;
+
+  cursor: pointer;
+
   transition: 0.2s ease;
 }
 
@@ -67,153 +128,283 @@
 
 .category-item.selected {
   background: #edf4ff;
+
   color: #152a4d;
 }
 
 .category-left {
+  min-width: 0;
+
   display: flex;
+
   align-items: center;
+
   gap: 10px;
 }
 
+.category-name {
+  white-space: nowrap;
+}
+
+/* ========================================
+   CATEGORY ICON
+======================================== */
+
 .category-icon {
   width: 27px;
+
   height: 27px;
-  border-radius: 7px;
+
+  min-width: 27px;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
+  border-radius: 7px;
+
+  flex-shrink: 0;
 }
 
 .category-icon.blue {
   color: #2563eb;
+
   background: #eaf2ff;
 }
 
 .category-icon.green {
   color: #16a34a;
+
   background: #eaf9ef;
 }
 
 .category-icon.orange {
   color: #f97316;
+
   background: #fff2e8;
 }
 
 .category-icon.pink {
   color: #e83e8c;
+
   background: #ffeaf3;
 }
 
 .category-icon.cyan {
   color: #0891b2;
+
   background: #e5f9fd;
 }
 
 .category-icon.purple {
   color: #7c3aed;
+
   background: #f1eaff;
 }
 
+/* ========================================
+   CATEGORY COUNT
+======================================== */
+
 .category-count {
   min-width: 27px;
+
   height: 25px;
+
   padding: 0 7px;
-  border-radius: 20px;
-  background: #edf1f7;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
+  border-radius: 20px;
+
+  background: #edf1f7;
+
   color: #4b5870;
+
   font-size: 12px;
+
   font-weight: 700;
+
+  flex-shrink: 0;
 }
 
-/* =========================
+/* ========================================
    TIP
-========================= */
+======================================== */
 
 .tip-card {
+  width: 100%;
+
   margin-top: 20px;
+
   padding: 19px 18px;
-  border: 1px solid #dfeaff;
-  border-radius: 13px;
-  background: #f2f6ff;
+
   display: flex;
+
+  align-items: flex-start;
+
   gap: 11px;
+
+  background: #f2f6ff;
+
+  border: 1px solid #dfeaff;
+
+  border-radius: 13px;
 }
 
 .tip-icon {
   color: #3267d8;
+
   flex-shrink: 0;
 }
 
 .tip-card h4 {
   margin: 0 0 8px;
+
   color: #3159a5;
+
   font-size: 13px;
 }
 
 .tip-card p {
   margin: 0;
+
   color: #405578;
+
   font-size: 12px;
+
   line-height: 1.65;
 }
 
-/* =========================
+/* ========================================
    MAIN CONTENT
-========================= */
+======================================== */
 
 .role-content {
+  /*
+   Fill remaining horizontal
+   space.
+  */
   flex: 1;
+
+  /*
+   Very important inside
+   flex layouts.
+  */
   min-width: 0;
+
+  /*
+   Dynamic vertical height.
+  */
+  height: auto;
+
+  min-height: 0;
+
+  align-self: flex-start;
+
   background: #ffffff;
+
   border: 1px solid #e8edf5;
+
   border-radius: 14px;
+
+  /*
+   Prevent anything from
+   creating outer scrollbar.
+  */
   overflow: hidden;
-  box-shadow: 0 3px 14px rgba(24, 52, 88, 0.04);
+
+  box-shadow:
+    0 3px 14px
+    rgba(24, 52, 88, 0.04);
 }
 
-/* =========================
+/* ========================================
    FILTER BAR
-========================= */
+======================================== */
 
 .filter-bar {
+  width: 100%;
+
   min-height: 68px;
+
   padding: 12px 14px;
+
   display: flex;
+
   align-items: center;
+
   gap: 12px;
-  border-bottom: 1px solid #edf1f6;
+
   background: #ffffff;
+
+  border-bottom:
+    1px solid #edf1f6;
 }
+
+/* ========================================
+   SEARCH
+======================================== */
 
 .search-box {
   height: 40px;
+
   flex: 1;
+
+  min-width: 150px;
+
   max-width: 285px;
-  border: 1px solid #e1e7f0;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
+
   padding: 0 12px;
+
+  display: flex;
+
+  align-items: center;
+
   gap: 10px;
-  color: #1c355e;
+
   background: #ffffff;
+
+  border: 1px solid #e1e7f0;
+
+  border-radius: 10px;
+
+  color: #1c355e;
 }
 
 .search-box:focus-within {
   border-color: #82aefc;
-  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.08);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(66, 133, 244, 0.08);
+}
+
+.search-box > svg {
+  flex-shrink: 0;
 }
 
 .search-box input {
   width: 100%;
+
+  min-width: 0;
+
+  padding: 0;
+
   border: 0;
-  outline: 0;
+
+  outline: none;
+
   background: transparent;
+
   color: #263652;
+
   font-size: 13px;
 }
 
@@ -221,307 +412,644 @@
   color: #7b879b;
 }
 
+/* ========================================
+   CLEAR SEARCH
+======================================== */
+
 .clear-search {
+  width: 25px;
+
+  height: 25px;
+
+  min-width: 25px;
+
+  padding: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
   border: 0;
+
+  border-radius: 50%;
+
   background: transparent;
+
   color: #8a96a8;
+
   cursor: pointer;
 }
 
+.clear-search:hover {
+  background: #f1f4f8;
+}
+
+/* ========================================
+   SELECT
+======================================== */
+
 .select-box {
-  width: 182px;
+  width: 160px;
+
   height: 40px;
+
   position: relative;
-  border: 1px solid #e1e7f0;
-  border-radius: 10px;
+
   display: flex;
+
   align-items: center;
+
   background: #ffffff;
+
+  border: 1px solid #e1e7f0;
+
+  border-radius: 10px;
+
+  flex-shrink: 0;
 }
 
 .select-box select {
   width: 100%;
+
   height: 100%;
-  padding: 0 38px 0 14px;
+
+  padding:
+    0 36px 0 13px;
+
   appearance: none;
+
+  -webkit-appearance: none;
+
   border: 0;
+
   outline: 0;
+
   background: transparent;
+
   color: #283750;
+
   font-size: 13px;
+
   font-weight: 500;
+
   cursor: pointer;
 }
 
 .select-box svg {
   position: absolute;
-  right: 12px;
+
+  right: 11px;
+
+  color: #64748b;
+
   pointer-events: none;
 }
 
+/* ========================================
+   FILTER BUTTON
+======================================== */
+
 .filter-button {
-  margin-left: auto;
   height: 40px;
-  min-width: 140px;
-  padding: 0 18px;
-  border: 1px solid #e1e7f0;
-  border-radius: 10px;
-  background: #ffffff;
-  color: #293750;
+
+  min-width: 105px;
+
+  margin-left: auto;
+
+  padding: 0 14px;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
-  gap: 9px;
+
+  gap: 7px;
+
+  border: 1px solid #e1e7f0;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #293750;
+
   font-size: 13px;
+
   font-weight: 600;
+
   cursor: pointer;
+
+  flex-shrink: 0;
 }
 
-.filter-button:hover,
-.refresh-button:hover,
-.action-btn:hover {
+.filter-button:hover {
   background: #f7f9fc;
 }
 
+/* ========================================
+   REFRESH
+======================================== */
+
 .refresh-button {
-  width: 42px;
+  width: 40px;
+
   height: 40px;
-  border: 1px solid #e1e7f0;
-  border-radius: 10px;
-  background: #ffffff;
+
+  min-width: 40px;
+
+  padding: 0;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
-  cursor: pointer;
+
+  border: 1px solid #e1e7f0;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
   color: #273750;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
 }
 
-/* =========================
-   TABLE
-========================= */
+.refresh-button:hover {
+  background: #f7f9fc;
+}
+
+/* ========================================
+   TABLE WRAPPER
+
+   IMPORTANT:
+   NO HORIZONTAL SCROLL
+======================================== */
 
 .role-table-wrapper {
   width: 100%;
-  overflow-x: auto;
+
+  max-width: 100%;
+
+  height: auto;
+
+  min-height: 0;
+
+  /*
+   This removes the scrollbar
+   shown in your screenshot.
+  */
+  overflow: visible;
 }
+
+/* ========================================
+   TABLE
+======================================== */
 
 .role-table {
   width: 100%;
+
+  max-width: 100%;
+
   border-collapse: collapse;
+
+  /*
+   Important:
+   columns must stay inside
+   available 100% width.
+  */
   table-layout: fixed;
 }
 
-.role-table th {
-  height: 50px;
-  padding: 0 22px;
-  background: #fbfcfe;
-  border-bottom: 1px solid #e9eef5;
-  color: #425675;
-  text-align: left;
-  font-size: 12px;
-  font-weight: 700;
-  white-space: nowrap;
+/* ========================================
+   COLGROUP WIDTHS
+======================================== */
+
+.col-role {
+  width: 21%;
 }
 
-.role-table th:nth-child(1) {
+.col-description {
+  width: 30%;
+}
+
+.col-users {
+  width: 8%;
+}
+
+.col-status {
+  width: 13%;
+}
+
+.col-permissions {
   width: 16%;
 }
 
-.role-table th:nth-child(2) {
-  width: 25%;
+.col-actions {
+  width: 12%;
 }
+
+/*
+  Total:
+  21 + 30 + 8 + 13 + 16 + 12
+  = 100%
+*/
+
+/* ========================================
+   HEADER
+======================================== */
+
+.role-table th {
+  height: 50px;
+
+  padding: 0 12px;
+
+  background: #fbfcfe;
+
+  border-bottom:
+    1px solid #e9eef5;
+
+  color: #425675;
+
+  text-align: left;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+/* USERS */
 
 .role-table th:nth-child(3) {
-  width: 9%;
   text-align: center;
 }
 
-.role-table th:nth-child(4) {
-  width: 14%;
-}
-
-.role-table th:nth-child(5) {
-  width: 17%;
-}
+/* ACTIONS */
 
 .role-table th:nth-child(6) {
-  width: 19%;
   text-align: center;
+}
+
+/* ========================================
+   BODY
+======================================== */
+
+.role-table tbody {
+  height: auto;
+}
+
+.role-table tr {
+  height: auto;
 }
 
 .role-table td {
-  height: 74px;
-  padding: 0 22px;
-  border-bottom: 1px solid #edf1f6;
+  padding: 20px 12px;
+
+  border-bottom:
+    1px solid #edf1f6;
+
   color: #1d2a43;
+
   font-size: 12px;
+
   vertical-align: middle;
+
+  /*
+   Prevent cell from increasing
+   table width.
+  */
+  min-width: 0;
 }
 
 .role-table tbody tr:hover {
   background: #fcfdff;
 }
 
-/* =========================
+/* ========================================
    ROLE
-========================= */
+======================================== */
 
 .role-name {
+  width: 100%;
+
+  min-width: 0;
+
   display: flex;
+
   align-items: center;
-  gap: 11px;
+
+  gap: 10px;
 }
 
 .role-name strong {
-  font-size: 13px;
+  min-width: 0;
+
   color: #1e2c46;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
   white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
 }
+
+/* ========================================
+   AVATAR
+======================================== */
 
 .role-avatar {
   width: 34px;
+
   height: 34px;
+
   min-width: 34px;
-  border-radius: 9px;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
+  border-radius: 9px;
+
+  flex-shrink: 0;
 }
 
 .role-avatar.blue {
   color: #2563eb;
+
   background: #e7f0ff;
 }
 
 .role-avatar.purple {
   color: #7c3aed;
+
   background: #eee7ff;
 }
 
 .role-avatar.orange {
   color: #f97316;
+
   background: #fff0e4;
 }
 
 .role-avatar.pink {
   color: #e83e8c;
+
   background: #ffe9f1;
 }
 
 .role-avatar.cyan {
   color: #0891b2;
+
   background: #e3f8fc;
 }
 
 .role-avatar.gray {
   color: #60708a;
+
   background: #e8edf3;
 }
 
-/* =========================
+/* ========================================
    DESCRIPTION
-========================= */
+======================================== */
 
 .description {
   display: block;
-  max-width: 230px;
+
+  width: 100%;
+
+  min-width: 0;
+
   color: #3e4f6b;
-  line-height: 1.45;
+
+  font-size: 12px;
+
   font-weight: 500;
+
+  line-height: 1.5;
+
+  white-space: normal;
+
+  overflow-wrap: break-word;
+
+  word-break: normal;
 }
 
-/* =========================
+/* ========================================
+   USERS
+======================================== */
+
+.users-column {
+  text-align: center;
+}
+
+.users-column strong {
+  color: #25344e;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+/* ========================================
    STATUS
-========================= */
+======================================== */
 
 .status {
+  max-width: 100%;
+
   display: inline-flex;
+
   align-items: center;
-  gap: 7px;
-  padding: 6px 11px;
+
+  gap: 6px;
+
+  padding: 6px 10px;
+
   border-radius: 20px;
+
   font-size: 11px;
+
   font-weight: 700;
+
+  white-space: nowrap;
 }
 
 .status.active {
   color: #16834b;
+
   background: #e8f9ef;
 }
 
 .status.inactive {
   color: #df4454;
+
   background: #ffe9ed;
 }
 
 .status-dot {
   width: 6px;
+
   height: 6px;
+
+  min-width: 6px;
+
   border-radius: 50%;
+
   background: currentColor;
+
+  flex-shrink: 0;
 }
+
+/* ========================================
+   PERMISSION
+======================================== */
 
 .permission {
+  display: block;
+
+  width: 100%;
+
+  min-width: 0;
+
   color: #25344e;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
   white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
 }
 
-/* =========================
+/* ========================================
    ACTIONS
-========================= */
+======================================== */
 
 .actions {
+  width: 100%;
+
+  min-width: 0;
+
   display: flex;
-  justify-content: center;
+
   align-items: center;
-  gap: 8px;
+
+  justify-content: center;
+
+  gap: 5px;
 }
 
 .action-btn {
-  width: 38px;
-  height: 38px;
-  border: 1px solid #e4e9f1;
-  border-radius: 9px;
-  background: #ffffff;
-  color: #34445f;
+  width: 34px;
+
+  height: 34px;
+
+  min-width: 34px;
+
+  padding: 0;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
+  border: 1px solid #e4e9f1;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #34445f;
+
   cursor: pointer;
+
+  flex-shrink: 0;
+
   transition: 0.15s ease;
 }
 
 .action-btn:hover {
   border-color: #cbd5e5;
+
+  background: #f7f9fc;
+
   color: #1f4fa3;
 }
 
+/* ========================================
+   MORE
+======================================== */
+
 .more-wrapper {
   position: relative;
+
+  flex-shrink: 0;
 }
 
 .more-menu {
   position: absolute;
-  z-index: 20;
+
+  z-index: 100;
+
   right: 0;
-  top: 43px;
-  width: 145px;
+
+  top: 40px;
+
+  width: 140px;
+
   padding: 6px;
+
   background: #ffffff;
+
   border: 1px solid #e4e9f1;
+
   border-radius: 9px;
-  box-shadow: 0 8px 25px rgba(30, 50, 80, 0.13);
+
+  box-shadow:
+    0 8px 25px
+    rgba(30, 50, 80, 0.13);
 }
 
 .more-menu button {
   width: 100%;
+
   padding: 9px 10px;
+
   border: 0;
+
   border-radius: 6px;
+
   background: transparent;
-  text-align: left;
-  font-size: 12px;
+
   color: #293750;
+
+  text-align: left;
+
+  font-size: 12px;
+
   cursor: pointer;
 }
 
@@ -533,57 +1061,105 @@
   color: #df4454;
 }
 
-/* =========================
+/* ========================================
    PAGINATION
-========================= */
+======================================== */
 
 .pagination {
+  width: 100%;
+
+  min-width: 0;
+
   min-height: 64px;
-  padding: 10px 22px;
+
+  padding: 12px 20px;
+
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
+  gap: 15px;
+
+  background: #ffffff;
 }
 
 .showing {
   color: #55657e;
+
   font-size: 12px;
+
   font-weight: 500;
+
+  white-space: nowrap;
 }
 
 .pagination-buttons {
   display: flex;
+
   align-items: center;
-  gap: 8px;
+
+  justify-content: flex-end;
+
+  gap: 7px;
+
+  min-width: 0;
 }
+
+/* ========================================
+   PAGINATION BUTTONS
+======================================== */
 
 .page-nav,
 .page-number {
   height: 38px;
+
   border: 1px solid #e1e7ef;
-  background: #ffffff;
+
   border-radius: 9px;
+
+  background: #ffffff;
+
   color: #35445d;
+
   font-size: 12px;
+
   font-weight: 600;
+
   cursor: pointer;
 }
 
 .page-nav {
   padding: 0 12px;
+
   display: flex;
+
   align-items: center;
+
+  justify-content: center;
+
   gap: 5px;
 }
 
 .page-number {
   width: 38px;
+
+  min-width: 38px;
+
+  padding: 0;
 }
 
 .page-number.active {
-  background: #1769e8;
   color: #ffffff;
+
+  background: #1769e8;
+
   border-color: #1769e8;
+
+  box-shadow:
+    0 4px 10px
+    rgba(23, 105, 232, 0.2);
 }
 
 .page-nav:hover:not(:disabled),
@@ -593,52 +1169,47 @@
 
 .page-nav:disabled {
   opacity: 0.45;
+
   cursor: not-allowed;
 }
 
-/* =========================
-   EMPTY
-========================= */
+/* ========================================
+   NO RESULT
+======================================== */
 
 .no-results {
-  height: 180px;
+  width: 100%;
+
+  padding: 40px 20px;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   color: #78869b;
+
   font-size: 14px;
 }
 
-/* =========================
+/* ========================================
    RESPONSIVE
-========================= */
+   1200px
+======================================== */
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
+
   .role-page {
-    flex-direction: column;
+    gap: 14px;
+
+    padding: 14px;
   }
 
   .role-sidebar {
-    width: 100%;
-  }
+    width: 225px;
 
-  .category-card {
-    width: 100%;
-  }
-
-  .category-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .tip-card {
-    display: none;
-  }
-}
-
-@media (max-width: 800px) {
-  .category-list {
-    grid-template-columns: repeat(2, 1fr);
+    min-width: 225px;
   }
 
   .filter-bar {
@@ -647,46 +1218,332 @@
 
   .search-box {
     max-width: none;
-    flex: 1 1 100%;
-  }
 
-  .select-box {
-    flex: 1;
-    width: auto;
+    flex: 1 1 220px;
   }
 
   .filter-button {
     margin-left: 0;
   }
 
+  /*
+   IMPORTANT:
+   NO min-width: 900px
+   NO horizontal scrollbar.
+  */
+
   .role-table {
-    min-width: 950px;
+    width: 100%;
+
+    min-width: 0;
   }
 
   .pagination {
-    min-width: 950px;
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .role-table th,
+  .role-table td {
+    padding-left: 9px;
+
+    padding-right: 9px;
+  }
+
+  .col-role {
+    width: 22%;
+  }
+
+  .col-description {
+    width: 28%;
+  }
+
+  .col-users {
+    width: 8%;
+  }
+
+  .col-status {
+    width: 13%;
+  }
+
+  .col-permissions {
+    width: 17%;
+  }
+
+  .col-actions {
+    width: 12%;
+  }
+
+  .action-btn {
+    width: 32px;
+
+    height: 32px;
+
+    min-width: 32px;
   }
 }
 
-@media (max-width: 500px) {
+/* ========================================
+   1000px
+======================================== */
+
+@media (max-width: 1000px) {
+
+  .role-page {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .role-sidebar {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .category-list {
+    display: grid;
+
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+
+    gap: 6px;
+  }
+
+  .tip-card {
+    display: none;
+  }
+
+  .role-content {
+    width: 100%;
+
+    align-self: auto;
+  }
+}
+
+/* ========================================
+   800px
+======================================== */
+
+@media (max-width: 800px) {
+
+  .category-list {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .filter-bar {
+    flex-wrap: wrap;
+  }
+
+  .search-box {
+    width: 100%;
+
+    max-width: none;
+
+    flex: 1 1 100%;
+  }
+
+  .select-box {
+    width: auto;
+
+    flex: 1 1 150px;
+  }
+
+  /*
+   Still NO table min-width.
+  */
+
+  .role-table {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .role-table th,
+  .role-table td {
+    padding-left: 6px;
+
+    padding-right: 6px;
+  }
+
+  .role-avatar {
+    width: 30px;
+
+    height: 30px;
+
+    min-width: 30px;
+  }
+
+  .role-name {
+    gap: 6px;
+  }
+
+  .role-name strong,
+  .description,
+  .permission {
+    font-size: 11px;
+  }
+
+  .status {
+    padding: 5px 7px;
+
+    font-size: 10px;
+  }
+
+  .action-btn {
+    width: 29px;
+
+    height: 29px;
+
+    min-width: 29px;
+  }
+
+  .actions {
+    gap: 3px;
+  }
+
+  .pagination {
+    padding: 10px 12px;
+  }
+}
+
+/* ========================================
+   600px
+======================================== */
+
+@media (max-width: 600px) {
+
   .role-page {
     padding: 10px;
   }
 
   .category-list {
-    grid-template-columns: 1fr;
-  }
-
-  .filter-bar {
-    padding: 12px;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
   .select-box {
     width: 100%;
+
     flex: 1 1 100%;
   }
 
   .filter-button {
     flex: 1;
+  }
+
+  /*
+   On very small screens we keep
+   all columns inside the card.
+
+   Hide descriptions instead of
+   creating horizontal scrolling.
+  */
+
+  .col-role {
+    width: 29%;
+  }
+
+  .col-description {
+    width: 0%;
+  }
+
+  .col-users {
+    width: 10%;
+  }
+
+  .col-status {
+    width: 18%;
+  }
+
+  .col-permissions {
+    width: 23%;
+  }
+
+  .col-actions {
+    width: 20%;
+  }
+
+  .role-table th:nth-child(2),
+  .role-table td:nth-child(2) {
+    display: none;
+  }
+
+  .role-table th {
+    font-size: 10px;
+  }
+
+  .role-table td {
+    padding-top: 14px;
+
+    padding-bottom: 14px;
+  }
+
+  .pagination {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .pagination-buttons {
+    width: 100%;
+
+    justify-content: flex-start;
+
+    flex-wrap: wrap;
+  }
+}
+
+/* ========================================
+   450px
+======================================== */
+
+@media (max-width: 450px) {
+
+  .category-list {
+    grid-template-columns: 1fr;
+  }
+
+  .role-avatar {
+    display: none;
+  }
+
+  .col-role {
+    width: 25%;
+  }
+
+  .col-users {
+    width: 10%;
+  }
+
+  .col-status {
+    width: 20%;
+  }
+
+  .col-permissions {
+    width: 25%;
+  }
+
+  .col-actions {
+    width: 20%;
+  }
+
+  .action-btn {
+    width: 27px;
+
+    height: 27px;
+
+    min-width: 27px;
+  }
+
+  /*
+   Hide third action on very
+   narrow mobile screens.
+  */
+
+  .more-wrapper {
+    display: none;
   }
 }
