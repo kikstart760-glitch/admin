@@ -1,0 +1,487 @@
+/* ==========================================
+   RECENT PURCHASE CONTAINER
+========================================== */
+
+.recent-purchase-box {
+  width: 100%;
+  margin-top: 22px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e5edf8;
+  border-radius: 14px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.recent-purchase-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.recent-purchase-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.recent-purchase-heading-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0874ff;
+  background: #eaf4ff;
+}
+
+.recent-purchase-heading h2 {
+  margin: 0;
+  color: #10204a;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.recent-purchase-heading p {
+  margin: 4px 0 0;
+  color: #7a8aa8;
+  font-size: 12px;
+}
+
+.recent-purchase-view-button {
+  border: none;
+  background: transparent;
+  color: #086cff;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.recent-purchase-view-button svg {
+  transition: transform 0.2s ease;
+}
+
+.recent-arrow-rotate {
+  transform: rotate(180deg);
+}
+
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.recent-purchase-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e7edf6;
+  border-radius: 11px;
+}
+
+.recent-purchase-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.recent-purchase-table thead {
+  background: #f7faff;
+}
+
+.recent-purchase-table th {
+  padding: 14px 14px;
+  text-align: left;
+  color: #304873;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.recent-purchase-table th:last-child {
+  text-align: center;
+}
+
+.recent-purchase-table td {
+  padding: 14px;
+  border-top: 1px solid #edf1f7;
+  color: #52668f;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.recent-purchase-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.recent-purchase-table tbody tr:hover {
+  background: #fbfdff;
+}
+
+
+/* ==========================================
+   PLAN
+========================================== */
+
+.recent-plan-info {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  white-space: nowrap;
+}
+
+.recent-plan-info > span {
+  color: #24385f;
+  font-weight: 600;
+}
+
+.recent-plan-crown {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.recent-plan-crown.blue {
+  background: #0875f5;
+}
+
+.recent-plan-crown.purple {
+  background: #8218f5;
+}
+
+.recent-plan-crown.green {
+  background: #08a861;
+}
+
+
+/* ==========================================
+   CUSTOMER
+========================================== */
+
+.recent-customer-name {
+  color: #5870a0;
+  white-space: nowrap;
+}
+
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.recent-status-chip {
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.recent-status-chip.active {
+  color: #079554;
+  background: #dcf9ea;
+}
+
+.recent-status-chip.trial {
+  color: #0875f5;
+  background: #e5f2ff;
+}
+
+.recent-status-chip.expired {
+  color: #dc3c3c;
+  background: #ffeded;
+}
+
+.recent-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+
+/* ==========================================
+   BILLING DATE
+========================================== */
+
+.recent-billing-date {
+  color: #536b9b;
+  white-space: nowrap;
+}
+
+
+/* ==========================================
+   ACTION BUTTON
+========================================== */
+
+.recent-purchase-table td:last-child {
+  text-align: center;
+}
+
+.recent-row-action {
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  border: 1px solid #d8e5f6;
+  background: #ffffff;
+  color: #54709d;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.recent-row-action:hover {
+  color: #086cff;
+  border-color: #a9ccff;
+  background: #f4f9ff;
+}
+
+
+/* ==========================================
+   DETAILS MODAL
+========================================== */
+
+.recent-detail-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.48);
+  backdrop-filter: blur(3px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recent-detail-modal {
+  width: min(500px, 100%);
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.22);
+}
+
+
+/* ==========================================
+   MODAL HEADER
+========================================== */
+
+.recent-detail-modal-header {
+  padding: 20px 22px;
+  border-bottom: 1px solid #edf0f5;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.recent-detail-modal-header h2 {
+  margin: 0;
+  color: #14254b;
+  font-size: 18px;
+}
+
+.recent-detail-modal-header p {
+  margin: 5px 0 0;
+  color: #8490a8;
+  font-size: 12px;
+}
+
+.recent-detail-close {
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 7px;
+  background: #f4f6fa;
+  color: #566681;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ==========================================
+   MODAL CONTENT
+========================================== */
+
+.recent-detail-content {
+  padding: 20px 22px;
+}
+
+.recent-detail-plan {
+  padding: 15px;
+  margin-bottom: 18px;
+
+  background: #f8fbff;
+  border: 1px solid #e4edf9;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.recent-detail-plan-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recent-detail-plan-icon.blue {
+  background: #0875f5;
+}
+
+.recent-detail-plan-icon.purple {
+  background: #8218f5;
+}
+
+.recent-detail-plan-icon.green {
+  background: #08a861;
+}
+
+.recent-detail-plan > div:nth-child(2) {
+  flex: 1;
+}
+
+.recent-detail-plan span {
+  display: block;
+  color: #8592aa;
+  font-size: 11px;
+}
+
+.recent-detail-plan h3 {
+  margin: 3px 0 0;
+  color: #1b315c;
+  font-size: 15px;
+}
+
+.recent-detail-plan > strong {
+  color: #086cff;
+  font-size: 16px;
+}
+
+
+/* ==========================================
+   DETAIL ITEMS
+========================================== */
+
+.recent-detail-item {
+  padding: 13px 0;
+  border-bottom: 1px solid #edf1f6;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.recent-detail-item:last-child {
+  border-bottom: none;
+}
+
+.recent-detail-item-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+
+  border-radius: 8px;
+  background: #eef5ff;
+  color: #0875f5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recent-detail-item > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.recent-detail-item span:first-child {
+  color: #8a96ab;
+  font-size: 11px;
+}
+
+.recent-detail-item strong {
+  color: #25395f;
+  font-size: 13px;
+}
+
+.recent-detail-item small {
+  color: #7c8ba6;
+}
+
+
+/* ==========================================
+   MODAL FOOTER
+========================================== */
+
+.recent-detail-footer {
+  padding: 15px 22px;
+  border-top: 1px solid #edf0f5;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.recent-detail-footer button {
+  padding: 9px 18px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #086cff;
+  color: white;
+
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 700px) {
+  .recent-purchase-box {
+    padding: 15px;
+  }
+
+  .recent-purchase-heading p {
+    display: none;
+  }
+
+  .recent-purchase-table {
+    min-width: 650px;
+  }
+}

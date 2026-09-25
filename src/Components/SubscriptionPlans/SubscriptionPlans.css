@@ -1,0 +1,644 @@
+/* =========================================
+   SUBSCRIPTION SECTION
+========================================= */
+
+.travel-subscription-shell {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e6edf7;
+  border-radius: 14px;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+}
+
+.travel-subscription-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.travel-subscription-title-area {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.travel-subscription-title-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf4ff;
+  color: #0568ff;
+  border-radius: 50%;
+}
+
+.travel-subscription-title-area h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #10204a;
+}
+
+.travel-subscription-title-area p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #60719c;
+}
+
+.travel-subscription-manage-button {
+  height: 42px;
+  padding: 0 16px;
+  border: 1px solid #cddcf5;
+  border-radius: 8px;
+  background: white;
+  color: #10204a;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.travel-subscription-manage-button:hover {
+  background: #f5f9ff;
+  border-color: #8ab6ff;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.travel-subscription-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.travel-subscription-card {
+  position: relative;
+  overflow: visible;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #d8e4f5;
+  transition: 0.25s ease;
+}
+
+.travel-subscription-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.travel-subscription-card.primary {
+  border: 2px solid #0875ff;
+}
+
+.travel-subscription-card.purple {
+  border-color: #d6bdff;
+}
+
+.travel-subscription-card.green {
+  border-color: #a7e4cf;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.travel-subscription-cover {
+  height: 115px;
+  overflow: hidden;
+  border-radius: 11px 11px 0 0;
+}
+
+.travel-subscription-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* =========================================
+   POPULAR BADGE
+========================================= */
+
+.travel-subscription-popular {
+  position: absolute;
+  top: -13px;
+  right: 8px;
+  z-index: 5;
+  background: #096bff;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  box-shadow: 0 3px 8px rgba(0, 102, 255, 0.25);
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.travel-subscription-content {
+  padding: 17px;
+}
+
+.travel-subscription-content h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  color: #10204a;
+}
+
+.travel-subscription-card.primary h3 {
+  color: #0668ff;
+}
+
+.travel-subscription-card.purple h3 {
+  color: #7437dc;
+}
+
+.travel-subscription-card.green h3 {
+  color: #087c59;
+}
+
+
+/* =========================================
+   PRICE
+========================================= */
+
+.travel-subscription-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.travel-subscription-currency {
+  font-size: 22px;
+  font-weight: 700;
+  color: #10204a;
+}
+
+.travel-subscription-price {
+  font-size: 29px;
+  font-weight: 750;
+  color: #10204a;
+}
+
+.travel-subscription-period {
+  margin-left: 5px;
+  font-size: 12px;
+  color: #66789f;
+}
+
+.travel-subscription-custom-price {
+  min-height: 35px;
+  display: flex;
+  align-items: center;
+  font-size: 21px;
+  font-weight: 700;
+  color: #10204a;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.travel-subscription-description {
+  min-height: 42px;
+  margin: 7px 0 14px;
+  color: #60719c;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.travel-subscription-feature-list {
+  min-height: 105px;
+}
+
+.travel-subscription-feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 11px;
+  color: #334873;
+  font-size: 13px;
+}
+
+.travel-subscription-feature svg {
+  color: #00a85a;
+  stroke-width: 2.5;
+}
+
+
+/* =========================================
+   CARD BUTTON
+========================================= */
+
+.travel-subscription-action {
+  width: 100%;
+  height: 40px;
+  border-radius: 7px;
+  background: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.travel-subscription-action.blue {
+  color: #0668ff;
+  border: 1px solid #a9cfff;
+}
+
+.travel-subscription-action.primary {
+  color: white;
+  background: #096bff;
+  border: 1px solid #096bff;
+}
+
+.travel-subscription-action.purple {
+  color: #7939e5;
+  border: 1px solid #cda9ff;
+}
+
+.travel-subscription-action.green {
+  color: #008b60;
+  border: 1px solid #43c99a;
+}
+
+.travel-subscription-action:hover {
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   MODAL BACKDROP
+========================================= */
+
+.travel-plan-manager-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(15, 23, 42, 0.48);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.travel-plan-manager-window {
+  width: min(720px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.22);
+}
+
+
+/* =========================================
+   MODAL HEADER
+========================================= */
+
+.travel-plan-manager-topbar {
+  padding: 20px 22px;
+  border-bottom: 1px solid #e9edf5;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.travel-plan-manager-topbar h2 {
+  margin: 0;
+  color: #10204a;
+  font-size: 19px;
+}
+
+.travel-plan-manager-topbar p {
+  margin: 5px 0 0;
+  color: #7785a4;
+  font-size: 13px;
+}
+
+.travel-plan-manager-close {
+  width: 35px;
+  height: 35px;
+  border: none;
+  background: #f5f7fb;
+  border-radius: 7px;
+  cursor: pointer;
+  color: #4c5e7d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================
+   MANAGER BODY
+========================================= */
+
+.travel-plan-manager-body {
+  padding: 22px;
+}
+
+.travel-plan-manager-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.travel-plan-manager-toolbar h3 {
+  margin: 0;
+  color: #17264b;
+  font-size: 15px;
+}
+
+.travel-plan-manager-add {
+  border: none;
+  background: #086cff;
+  color: white;
+  border-radius: 7px;
+  padding: 9px 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+
+/* =========================================
+   PLAN LIST
+========================================= */
+
+.travel-plan-manager-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.travel-plan-manager-item {
+  border: 1px solid #e2e8f2;
+  border-radius: 10px;
+  padding: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.travel-plan-manager-plan-info {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.travel-plan-manager-plan-icon {
+  width: 39px;
+  height: 39px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #edf5ff;
+  color: #0872ff;
+}
+
+.travel-plan-manager-plan-icon.purple {
+  background: #f5edff;
+  color: #7939e5;
+}
+
+.travel-plan-manager-plan-icon.green {
+  background: #eafbf5;
+  color: #059669;
+}
+
+.travel-plan-manager-plan-info h4 {
+  margin: 0;
+  color: #17264b;
+  font-size: 14px;
+}
+
+.travel-plan-manager-plan-info p {
+  margin: 4px 0 0;
+  color: #7483a1;
+  font-size: 12px;
+}
+
+.travel-plan-manager-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.travel-plan-manager-popular {
+  padding: 5px 8px;
+  background: #eaf3ff;
+  color: #076cff;
+  border-radius: 15px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.travel-plan-manager-edit,
+.travel-plan-manager-delete {
+  height: 34px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.travel-plan-manager-edit {
+  padding: 0 10px;
+  background: white;
+  border: 1px solid #cbd7ea;
+  color: #30476d;
+}
+
+.travel-plan-manager-delete {
+  width: 34px;
+  justify-content: center;
+  background: #fff2f2;
+  color: #e23c3c;
+  border: 1px solid #ffd4d4;
+}
+
+
+/* =========================================
+   EDITOR
+========================================= */
+
+.travel-plan-editor {
+  padding: 22px;
+}
+
+.travel-plan-editor-heading {
+  margin-bottom: 20px;
+}
+
+.travel-plan-editor-heading h3 {
+  margin: 0;
+  color: #17264b;
+}
+
+.travel-plan-editor-heading p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #7483a1;
+}
+
+.travel-plan-editor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.travel-plan-editor-field {
+  margin-bottom: 15px;
+}
+
+.travel-plan-editor-field label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #34486c;
+}
+
+.travel-plan-editor-field input,
+.travel-plan-editor-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d6dfed;
+  border-radius: 7px;
+  padding: 10px 11px;
+  font-family: inherit;
+  outline: none;
+}
+
+.travel-plan-editor-field input:focus,
+.travel-plan-editor-field textarea:focus {
+  border-color: #0872ff;
+  box-shadow: 0 0 0 3px rgba(8, 114, 255, 0.08);
+}
+
+.travel-plan-editor-field small {
+  display: block;
+  margin-top: 5px;
+  color: #8a97af;
+}
+
+.travel-plan-editor-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #34486c;
+  cursor: pointer;
+}
+
+
+/* =========================================
+   EDIT ACTIONS
+========================================= */
+
+.travel-plan-editor-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 20px;
+  margin-top: 15px;
+  border-top: 1px solid #edf0f5;
+}
+
+.travel-plan-editor-cancel,
+.travel-plan-editor-save {
+  height: 39px;
+  padding: 0 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.travel-plan-editor-cancel {
+  background: white;
+  border: 1px solid #d4ddea;
+  color: #4c5e7d;
+}
+
+.travel-plan-editor-save {
+  border: none;
+  background: #086cff;
+  color: white;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+  .travel-subscription-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .travel-subscription-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .travel-subscription-manage-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .travel-subscription-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .travel-plan-manager-item {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .travel-plan-manager-controls {
+    width: 100%;
+  }
+
+  .travel-plan-editor-grid {
+    grid-template-columns: 1fr;
+  }
+}
